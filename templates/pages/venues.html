@@ -1,0 +1,29 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Venues{% endblock %}
+{% block content %}
+
+{% for venue1 in city_state %}
+
+<h3>{{ venue1.city }}, {{ venue1.state }}</h3>
+<ul class="items">
+	
+		{% for venue2 in venues %}
+			{% if venue1.city == venue2.city %}
+				{% if venue1.state == venue2.state %}
+					<li>
+						<a href="/venues/{{ venue2.id }}">
+							<i class="fas fa-music"></i>
+							<div class="item">
+								<h5>{{ venue2.name }}</h5>
+							</div>
+						</a>
+					</li>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</ul>
+{% endfor %}
+{% endblock %}
+
+
+
