@@ -17,16 +17,6 @@ from flask_wtf import Form
 from forms import *
 from models import *
 
-#----------------------------------------------------------------------------#
-# App Config.
-#----------------------------------------------------------------------------#
-
-app = Flask(__name__)
-moment = Moment(app)
-app.config.from_object('config')
-db = SQLAlchemy(app)
-
-migrate = Migrate( app , db )
 
 #----------------------------------------------------------------------------#
 # Filters.
